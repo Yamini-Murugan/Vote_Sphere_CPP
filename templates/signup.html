@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block register %}
+
+<!--Register Page for new users / students-->
+<div class="container mt-5 mb-5 pt-3 w-50" style = "border: 2px solid #43e898; border-radius:30px">
+    <h1 class="well text-dark mt-2 text-center">Register Here</h1>
+				<form  action=""method= "POST">
+                    {% csrf_token %}
+                    
+					<div class="col-sm-12 ">
+						<div class="row">
+                            <div class="col-sm-12 form-group">
+                                <label for="name">Username</label>
+                                <input id="name" type="text" placeholder="User Full Name" class="form-control" name = 'username'>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="email">Email Address</label>
+                                <input id="email" type="email" placeholder="Enter your Email " class="form-control" name = 'email'>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="pass">Password</label>
+                                <input id="pass" type="password" placeholder="Enter Password" class="form-control" name = 'password'>
+                                 <span id="passwordHelpInline" class="form-text">
+                                  Must be 8-20 characters long, contain digit and special character.
+                                </span>
+                            </div>
+                            <div class="col-sm-12 form-group" >
+                                <label for="pass2">Confirm Password</label>
+                                <input id="pass2" type="password" placeholder="Confirm Password" class="form-control" name = 'password2'>
+                                 <span id="confirmpassword" class="form-text">
+                                  Enter the same Password Again
+                                </span>
+                            </div>
+                            <div class="col-sm-12 form-group" >
+                                <label for="phone">Phone Number</label>
+                                <input id="phone" type="tel" placeholder="Phone Number" class="form-control" name = 'phoneno'>
+                            </div>
+                            <div class="col-sm-12 form-group" >
+                                <label for="vote_ID">Voters Type</label>
+                                <select class="form-control" name="regtype" name="regtype">
+                                    <option value="vote_ID">Student</option>
+                                </select>
+                            </div>
+						</div>
+						</div>
+						<button type="submit" class="btn btn-success btn-lg">Sign Up </button>
+                    </form> 
+	</div>
+{% endblock %}

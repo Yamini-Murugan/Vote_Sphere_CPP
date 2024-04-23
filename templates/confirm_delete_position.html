@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}
+Delete{% endblock%}
+{% block delete%}
+<!--Allows Admin to delete poll enteries from this page-->
+<div class="box">
+  <h1>Confirm Delete Position</h1>
+  <p>Are you sure you want to delete the position "{{ position.name }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger btn-lg" type="submit">Delete</button>
+  </form>
+  {%endblock%}
